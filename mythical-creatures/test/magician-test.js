@@ -4,12 +4,12 @@ var Magician = require('../exercises/magician');
 describe('Magician', function() {
 // Oh no! It looks like there's no text in the `it` blocks! I guess you'll have to read the tests SUPER carefully to know what the test is expecting!
 
-it('', function() {
+it('should instantiate Magician', function() {
     assert.isFunction(Magician);
     assert.instanceOf(new Magician({}), Magician);
   });
 
-it('', function() {
+it('should have a name', function() {
     var magician1 = new Magician({ name: 'Scott' });
     var magician2 = new Magician({ name: 'Casey' });
 
@@ -17,7 +17,7 @@ it('', function() {
     assert.equal(magician2.name, 'The Great Casey');
   });
 
-it('', function() {
+it('should be able to have an assistant', function() {
     var magician1 = new Magician({ name: 'Scott', assistant: true });
     var magician2 = new Magician({ name: 'Casey', assistant: false });
 
@@ -28,19 +28,19 @@ it('', function() {
     assert.equal(magician2.assistant, false);
   });
 
-it('', function() {
+it('by default magicians have a top hat', function() {
     var magician = new Magician({ name: 'Scott' });
 
     assert.equal(magician.favoriteAccessory, 'top hat');
   });
 
-it('', function() {
+it('can have a different favorite accessory', function() {
     var magician = new Magician({ name: 'Casey', clothing: 'cape' });
 
     assert.equal(magician.favoriteAccessory, 'cape')
   });
 
-it('', function() {
+it('can preform spells or charms', function() {
     var magician = new Magician({ name: 'Scott' });
 
     var spell = magician.performIncantation('abracadabra');
@@ -50,7 +50,7 @@ it('', function() {
     assert.equal(charm, 'ALLAKAZAAM!');
   });
 
-it('', function() {
+it('can perform magic tricks', function() {
     var magician1 = new Magician({ name: 'Hannah' });
     var magician2 = new Magician({ name: 'Kayla', clothing: 'top hat' });
 
@@ -61,7 +61,7 @@ it('', function() {
     assert.equal(spell2, 'PULL RABBIT FROM TOP HAT');
   });
 
-it('', function() {
+it('performs the magic trick using favorite accessory', function() {
     var magician = new Magician({ name: 'Leta', clothing: 'cape' });
 
     var spell = magician.performTrick();
@@ -69,13 +69,13 @@ it('', function() {
     assert.equal(spell, 'PULL RABBIT FROM CAPE');
   });
 
-it('', function() {
+it('by default has confidence of 10%', function() {
     var magician = new Magician({ name: 'Leta' });
 
     assert.equal(magician.confidencePercentage, 10);
   });
 
-it('', function() {
+it('With each magic trick performed confidence increases by 10', function() {
     var magician = new Magician({ name: 'Leta' });
 
     magician.performTrick();
@@ -89,7 +89,7 @@ it('', function() {
     assert.equal(magician.confidencePercentage, 50);
   });
 
-it('', function() {
+it('after confidence is 100% magician can perform a show stopper trick', function() {
     var magician = new Magician({ name: 'Scott', assistant: true });
 
     assert.equal(magician.performShowStopper(), 'Oh no, this trick is not ready!');
@@ -105,7 +105,7 @@ it('', function() {
     assert.equal(magician.performShowStopper(), 'WOW! The magician totally just sawed that person in half!');
   });
 
-it('', function() {
+it('magician can only perform this show stopper if they have an assistant', function() {
     var magician1 = new Magician({ name: 'Scott', assistant: false });
     var magician2 = new Magician({ name: 'Hannah', assistant: true });
 
